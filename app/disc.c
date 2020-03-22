@@ -1,20 +1,25 @@
 #include <stdio.h>
+
 #include <math.h>
-double* disc(int a, int b, int c)
+
+int disc(double a, double b, double c, double* k)
 {
     double d;
-    double m[2];
-    double *p=m;
     d=b*b-4*a*c;
-    printf("%lf\n", d);
-    printf("%lf\n", (-b+sqrt(d))/(2*a));
-    printf("%lf\n", (-b-sqrt(d))/(2*a));
-    if(d>=0){
-        m[0]= (-b+sqrt(d))/(2*a);
-        m[1]= (-b-sqrt(d))/(2*a);
+    if(d>0){
+        k[0] = (-b+sqrt(d))/(2*a);
+        k[1] = (-b-sqrt(d))/(2*a);
     }
-    else {
-        printf("Дискриминант отрицательный. Корней нет.");
+    else { 
+	if(d==0){
+            k[0] = -b/(2*a);
+	    if (k[0]==-0)
+		k[0]=0;// когда b == 0 в k[0] получается -0
+	    return 1;
+	    }
+	else
+	    return 2;
     }
-return p;
+
+return 0;
 }

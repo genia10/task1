@@ -5,6 +5,6 @@ int myfunc(int b);
 
 int fibonachi(int num);
 
-double* disc(int a, int b, int c);
+int disc(double a, double b, double c, double* k);
 
 #endif // MYFUNC_H

@@ -3,7 +3,9 @@
 #include <math.h>
 
 int disc(double a, double b, double c, double* k)
-{
+{   
+    if (a == 0) 
+	return 3;
     double d;
     d=b*b-4*a*c;
     if(d>0){

@@ -1,0 +1,40 @@
+language:
+  - cpp
+
+before_install:
+  - pip install --user cpp-coveralls
+
+addons:
+  sonarcloud:
+    organization: "seekerk-github"
+    token:
+      secure: $SONAR_TOKEN
+
+script:
+  - qmake
+  - make
+  - ./tests/tests
+
+after_success:
+  - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+    
+notifications:
+  email: false
+sonar.projectKey=genia10_task1
+sonar.organization=genia10
+
+# This is the name and version displayed in the SonarCloud UI.
+#sonar.projectName=task1
+#sonar.projectVersion=1.0
+ 
+# Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
+#sonar.sources=.
+ 
+# Encoding of the source code. Default is default system encoding
+#sonar.sourceEncoding=UTF-8

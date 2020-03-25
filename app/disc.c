@@ -14,9 +14,8 @@ int disc(double a, double b, double c, double* k)
     }
     else { 
 	if(d==0){
-            k[0] = -b/(2*a);
-	    if (k[0]==-0)
-		k[0]=0;// когда b == 0 в k[0] получается -0
+            k[0] = (-b)/(2*a);
+	    
 	    return 1;
 	    }
 	else

@@ -6,9 +6,9 @@ before_install:
 
 addons:
   sonarcloud:
-    organization: "seekerk-github"
+    organization: "genia10"
     token:
-      secure: $SONAR_TOKEN
+      secure: XzVpBSeKtyXZNGUxeErQcIoUIlk7p8BPM
 
 script:
   - qmake

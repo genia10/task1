@@ -8,7 +8,8 @@ SOURCES += main.c \
     disc.c
 
 HEADERS += \
-    myfunc.h
+    myfunc.h\
+    disc.h
 
 QMAKE_CFLAGS += -Wall -Wextra -Werror
 

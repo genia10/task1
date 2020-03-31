@@ -4,8 +4,9 @@
 #include "disc.h"
 
 int main()
-{
+{   int a;
+    if (a>0)
     return disc(1,4,4, NULL);
-    continue;
+    else
     return myfunc(2);
 }

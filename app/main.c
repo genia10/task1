@@ -6,5 +6,6 @@
 int main()
 {
     return disc(1,4,4, NULL);
+    continue;
     return myfunc(2);
 }
